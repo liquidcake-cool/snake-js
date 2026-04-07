@@ -66,6 +66,21 @@ export default class SnakeController {
 			}
 			if (cell.hasBomb) {
 				this.playBomb = true;
+				// 1. Maak het video-element aan
+				const video = document.createElement('video');
+				
+				// 2. Stel de bron en eigenschappen in
+				video.src = 'images/Explosion Meme - Wacdonald none (360p, h264, youtube).mp4';
+				video.controls = false; // Toon knoppen (play/pauze/volume)
+				video.width = 640;
+				
+				// 3. Voeg het element toe aan de body van je pagina
+				document.body.appendChild(video);
+				
+				// 4. Start de video (let op: browsers vereisen vaak een klik van de gebruiker)
+				video.play().catch(error => {
+				    console.log("Autoplay geblokkeerd. Gebruiker moet eerst klikken.");
+				});
 				this.gameOver = true;
 			}
 			this.snake.snakeCoords.pop();
