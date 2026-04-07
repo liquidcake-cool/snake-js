@@ -90,7 +90,7 @@ export default class SnakeController {
         console.error("Video afspelen mislukt:", error);
     });
 
-    this.gameOver = true; 
+    //this.gameOver = true; 
 }
 			}
 			this.snake.snakeCoords.pop();
