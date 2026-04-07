@@ -66,23 +66,32 @@ export default class SnakeController {
 			}
 			if (cell.hasBomb) {
 				this.playBomb = true;
-				// 1. Maak het video-element aan
-				//const video = document.createElement('video');
-				const video = document.getElementById('canvas');
-				
-				// 2. Stel de bron en eigenschappen in
-				video.src = 'images/Explosion Meme - Wacdonald none (360p, h264, youtube).mp4';
-				video.controls = false; // Toon knoppen (play/pauze/volume)
-				video.width = 640;
-				
-				// 3. Voeg het element toe aan de body van je pagina
-				document.body.appendChild(video);
-				
-				// 4. Start de video (let op: browsers vereisen vaak een klik van de gebruiker)
-				video.play().catch(error => {
-				    console.log("Autoplay geblokkeerd. Gebruiker moet eerst klikken.");
-				});
-				//this.gameOver = true;
+			if (cell.hasBomb) {
+    this.playBomb = true;
+
+    // 1. Maak een video-element aan (niet in de DOM plaatsen)
+    const video = document.createElement('video');
+    video.src = 'images/Explosion Meme - Wacdonald none (360p, h264, youtube).mp4';
+    video.muted = true; // Veel browsers blokkeren autoplay zonder 'muted'
+    
+    video.play().then(() => {
+        const renderVideo = () => {
+            if (!video.paused && !video.ended) {
+                // 2. Teken het huidige frame van de video op het canvas
+                // We gebruiken de context die je al hebt in deze klasse
+                context.drawImage(video, 0, 0, boardController.width, boardController.height);
+                
+                // Blijf herhalen zolang de video speelt
+                requestAnimationFrame(renderVideo);
+            }
+        };
+        renderVideo();
+    }).catch(error => {
+        console.error("Video afspelen mislukt:", error);
+    });
+
+    this.gameOver = true; 
+}
 			}
 			this.snake.snakeCoords.pop();
 		}
