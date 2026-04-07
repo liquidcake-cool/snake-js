@@ -67,7 +67,8 @@ export default class SnakeController {
 			if (cell.hasBomb) {
 				this.playBomb = true;
 				// 1. Maak het video-element aan
-				const video = document.createElement('video');
+				//const video = document.createElement('video');
+				const video = document.getElementById('canvas');
 				
 				// 2. Stel de bron en eigenschappen in
 				video.src = 'images/Explosion Meme - Wacdonald none (360p, h264, youtube).mp4';
