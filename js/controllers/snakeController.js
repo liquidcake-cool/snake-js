@@ -81,7 +81,7 @@ export default class SnakeController {
 				video.play().catch(error => {
 				    console.log("Autoplay geblokkeerd. Gebruiker moet eerst klikken.");
 				});
-				this.gameOver = true;
+				//this.gameOver = true;
 			}
 			this.snake.snakeCoords.pop();
 		}
