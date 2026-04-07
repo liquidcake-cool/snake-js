@@ -69,26 +69,32 @@ export default class SnakeController {
 			if (cell.hasBomb) {
     this.playBomb = true;
 
-    // 1. Maak een video-element aan (niet in de DOM plaatsen)
+   if (cell.hasBomb) {
+
+    this.playBomb = true;
+    this.gameOver = true;
+
     const video = document.createElement('video');
-    video.src = 'images/Explosion Meme - Wacdonald none (360p, h264, youtube).mp4';
-    video.muted = true; // Veel browsers blokkeren autoplay zonder 'muted'
-    
-    video.play().then(() => {
-        const renderVideo = () => {
-            if (!video.paused && !video.ended) {
-                // 2. Teken het huidige frame van de video op het canvas
-                // We gebruiken de context die je al hebt in deze klasse
-                context.drawImage(video, 0, 0, boardController.width, boardController.height);
-                
-                // Blijf herhalen zolang de video speelt
-                requestAnimationFrame(renderVideo);
+    video.src = 'images/explosion.mp4';
+    video.muted = true;
+    video.playsInline = true;
+
+    video.addEventListener('canplay', () => {
+        video.play();
+
+        const draw = () => {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            if (!video.ended) {
+                requestAnimationFrame(draw);
             }
         };
-        renderVideo();
-    }).catch(error => {
-        console.error("Video afspelen mislukt:", error);
+
+        draw();
     });
+
+}
 
     //this.gameOver = true; 
 }
