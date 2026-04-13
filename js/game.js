@@ -230,13 +230,27 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
-		this.cell = this.explo;
-		this.updateInterval = setInterval(() => {
-			this.update();
-		}, 500);
+		const gif = document.getElementById('https://liquidcake-cool.github.io/snake-js/images/gif.gif');
+		// 1. Verberg het canvas en toon de GIF
+	    this.canvas.style.display = 'none';
+	    gif.style.display = 'block';
+	
+	    // 2. Forceer de GIF om opnieuw te beginnen (optioneel maar aangeraden)
+	    const currentSrc = gif.src;
+	    gif.src = ''; 
+	    gif.src = currentSrc;
+	
+	    // 3. Na 1 seconde (1000ms) wisselen we weer terug
+	    setTimeout(() => {
+	        gif.style.display = 'none';
+	        canvas.style.display = 'block';
+        
+        // Hier kun je eventueel de game resetten of het Game Over scherm tonen
+        // resetGame(); 	
+    	}, 2000);
 	//	this.snakeBody=this.explo;
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
-	//	alert('Game Over');
-	//	window.location.reload();
+		alert('Game Over');
+		window.location.reload();
 	}
 }
