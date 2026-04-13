@@ -231,7 +231,23 @@ export default class Game {
 		this.gameOverSound.play();
 		clearInterval(this.updateInterval);
 		clearInterval(this.bombInterval);
-		alert('Game Over');
+		const video = document.createElement('video');
+    	video.src = 'images/explosion.mp4';
+    	video.muted = true;
+    	video.playsInline = true;
+	    video.addEventListener('canplay', () => {
+        	video.play();
+	        const draw = () => {
+    	        context.clearRect(0, 0, canvas.width, canvas.height);
+        	    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+	            if (!video.ended) {
+    	            requestAnimationFrame(draw);
+        	    }
+        	};
+	        draw();
+    	});
+	
+//		alert('Game Over');
 		window.location.reload();
 	}
 }
