@@ -229,7 +229,7 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
-		this.snakeHead = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/gif.gif');
+		this.snakeHead = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/bomb.png');
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
 //		alert('Game Over');
 	//	window.location.reload();
