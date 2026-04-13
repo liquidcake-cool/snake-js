@@ -236,7 +236,7 @@ export default class Game {
 		}, 500);
 	//	this.snakeBody=this.explo;
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
-		alert('Game Over');
-		window.location.reload();
+	//	alert('Game Over');
+	//	window.location.reload();
 	}
 }
