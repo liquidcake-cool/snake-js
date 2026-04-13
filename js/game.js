@@ -247,11 +247,10 @@ export default class Game {
         
         // Hier kun je eventueel de game resetten of het Game Over scherm tonen
 
-		alert('Game Over');
-		window.location.reload();
-    	}, 2000);
+    	}, 5000);
 	//	this.snakeBody=this.explo;
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
+		window.location.reload();
 		
 	}
 }
