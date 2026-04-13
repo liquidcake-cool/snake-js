@@ -64,40 +64,9 @@ export default class SnakeController {
 				this.boardController.addFood(this);
 				return;
 			}
-			if (cell.hasBomb) {
+			if (cell.hasBomb) {	
 				this.playBomb = true;
-			if (cell.hasBomb) {
-    this.playBomb = true;
-
-   if (cell.hasBomb) {
-
-    this.playBomb = true;
-    this.gameOver = true;
-
-    const video = document.createElement('video');
-    video.src = 'images/explosion.mp4';
-    video.muted = true;
-    video.playsInline = true;
-
-    video.addEventListener('canplay', () => {
-        video.play();
-
-        const draw = () => {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            if (!video.ended) {
-                requestAnimationFrame(draw);
-            }
-        };
-
-        draw();
-    });
-
-}
-
-    //this.gameOver = true; 
-}
+				this.gameOver = true;  
 			}
 			this.snake.snakeCoords.pop();
 		}
