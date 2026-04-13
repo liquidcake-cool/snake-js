@@ -246,11 +246,12 @@ export default class Game {
 	        canvas.style.display = 'block';
         
         // Hier kun je eventueel de game resetten of het Game Over scherm tonen
-        // resetGame(); 	
+
+		alert('Game Over');
+		window.location.reload();
     	}, 2000);
 	//	this.snakeBody=this.explo;
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
-		alert('Game Over');
-		window.location.reload();
+		
 	}
 }
