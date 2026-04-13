@@ -229,24 +229,7 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
-		clearInterval(this.updateInterval);
-		clearInterval(this.bombInterval);
-		const video = document.createElement('video');
-    	video.src = 'images/explosion.mp4';
-    	video.muted = true;
-    	video.playsInline = true;
-	    video.addEventListener('canplay', () => {
-        	video.play();
-	        const draw = () => {
-    	        context.clearRect(0, 0, canvas.width, canvas.height);
-        	    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-	            if (!video.ended) {
-    	            requestAnimationFrame(draw);
-        	    }
-        	};
-	        draw();
-    	});
-	
+		this.snakeHead = await this.preloadImage('../images/gif.gif');
 //		alert('Game Over');
 	//	window.location.reload();
 	}
