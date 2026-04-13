@@ -229,7 +229,7 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
-		this.snakeHead = await this.preloadImage('../images/gif.gif');
+		this.snakeHead = await this.preloadImage('images/gif.gif');
 //		alert('Game Over');
 	//	window.location.reload();
 	}
