@@ -33,6 +33,7 @@ export default class Game {
 		this.snakeBody = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/body.png');
 		this.snakeHead = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/head.png');
 		this.bomb = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/bomb.png');
+		this.explo = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/gif.gif');
 	}
 	async preloadSounds() {
 		this.bombSound = await this.preloadSound('https://jsdevspace.github.io/snake-js/sounds/bomb.wav');
@@ -229,7 +230,7 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
-		this.snakeHead = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/bomb.png');
+		this.snakeHead = this.bomb;
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
 //		alert('Game Over');
 	//	window.location.reload();
