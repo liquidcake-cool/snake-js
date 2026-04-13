@@ -230,7 +230,7 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
-		const gif = document.getElementById('https://liquidcake-cool.github.io/snake-js/images/gif.gif');
+		const gif = document.getElementById('explosionGif');
 		// 1. Verberg het canvas en toon de GIF
 	    this.canvas.style.display = 'none';
 	    gif.style.display = 'block';
