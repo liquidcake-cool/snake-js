@@ -231,6 +231,9 @@ export default class Game {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
 		this.cell = this.explo;
+		this.updateInterval = setInterval(() => {
+			this.update();
+		}, 500);
 	//	this.snakeBody=this.explo;
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
 		alert('Game Over');
