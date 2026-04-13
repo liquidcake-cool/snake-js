@@ -230,10 +230,10 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
-		this.snakeHead = this.explo;
-		this.snakeBody=this.explo;
+		this.cell = this.explo;
+	//	this.snakeBody=this.explo;
 		//https://jsdevspace.github.io/snake-js/images/bomb.png'
 		alert('Game Over');
-	//	window.location.reload();
+		window.location.reload();
 	}
 }
