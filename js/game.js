@@ -248,6 +248,6 @@ export default class Game {
     	});
 	
 //		alert('Game Over');
-		window.location.reload();
+	//	window.location.reload();
 	}
 }
