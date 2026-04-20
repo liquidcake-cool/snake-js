@@ -7,7 +7,7 @@ export default class BoardController {
 	init() {
 		this.board = new Board();
 	}
-	render(context, cell, food, bomb, Pu) {
+	render(context, cell, food, bomb, pu) {
 		this.cellWidth = cell.width + 1;
 		this.cellheight = cell.height + 1;
 		this.offsetX =
