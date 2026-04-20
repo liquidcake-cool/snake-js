@@ -158,6 +158,7 @@ export default class Game {
 				this.cell,
 				this.food,
 				this.bomb,
+				this.Pu
 			);
 	}
 	fitWidth() {
