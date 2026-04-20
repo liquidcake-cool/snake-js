@@ -55,7 +55,7 @@ export default class BoardController {
 	}
 	getAvailableCell(snakeController) {
 		const availableCells = this.board.cells.filter((cell) => {
-			if (cell.hasFood || cell.hasBomb) {
+			if (cell.hasFood || cell.hasBomb ||cell.hasPu) {
 				return;
 			}
 			return !snakeController.snake.snakeCoords.includes(cell);
