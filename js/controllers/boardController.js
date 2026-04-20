@@ -6,6 +6,7 @@ export default class BoardController {
 	}
 	init() {
 		this.board = new Board();
+		addPu();
 	}
 	render(context, cell, food, bomb, Pu) {
 		this.cellWidth = cell.width + 1;
