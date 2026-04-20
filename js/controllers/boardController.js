@@ -86,6 +86,7 @@ export default class BoardController {
 		}
 		if (type === 'pu') {
         	cell.hasPu = true;
+			console.log("powerup added");
     	}
 	}
 	removeObject(cell, type) {
