@@ -90,6 +90,7 @@ export default class Game {
 		);
 		this.boardController.addObject(this.snakeController, 'food');
 		this.boardController.addObject(this.snakeController, 'bomb');
+		this.boardController.addObject(this.snakeController, 'Pu');
 		this.createListeners();
 		this.createFont();
 	}
