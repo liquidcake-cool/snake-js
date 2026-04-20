@@ -7,7 +7,7 @@ export default class BoardController {
 	init() {
 		this.board = new Board();
 	}
-	render(context, cell, food, bomb) {
+	render(context, cell, food, bomb, Pu) {
 		this.cellWidth = cell.width + 1;
 		this.cellheight = cell.height + 1;
 		this.offsetX =
@@ -32,6 +32,13 @@ export default class BoardController {
 				if (cellCoords.hasBomb) {
 					context.drawImage(
 						bomb,
+						cellCoords.x * this.cellWidth + this.offsetX,
+						cellCoords.y * this.cellheight + this.offsetY,
+					);
+				}
+				if (cellCoords.hasPu) {
+					context.drawImage(
+						Pu,
 						cellCoords.x * this.cellWidth + this.offsetX,
 						cellCoords.y * this.cellheight + this.offsetY,
 					);
