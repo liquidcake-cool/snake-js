@@ -197,6 +197,7 @@ export default class Game {
 			this.cell,
 			this.food,
 			this.bomb,
+			this.Pu
 		);
 		this.snakeController.render(
 			this.context,
