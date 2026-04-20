@@ -24,7 +24,7 @@ export default class BoardController {
 				);
 				if (cellCoords.hasFood) {
 					context.drawImage(
-						Pu,
+						food,
 						cellCoords.x * this.cellWidth + this.offsetX,
 						cellCoords.y * this.cellheight + this.offsetY,
 					);
