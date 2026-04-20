@@ -60,6 +60,10 @@ export default class BoardController {
 		let cell = this.getAvailableCell(snakeController);
 		cell.hasFood = true;
 	}
+	addPu(snakeController) {
+		let cell = this.getAvailableCell(snakeController);
+		cell.hasPu = true;
+	}
 	addBomb(snakeController) {
 		let cell = this.getAvailableCell(snakeController);
 		cell.hasBomb = true;
