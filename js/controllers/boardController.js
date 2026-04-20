@@ -84,6 +84,9 @@ export default class BoardController {
 			this.removeBombs();
 			cell.hasBomb = true;
 		}
+		if (type === 'pu') {
+        	cell.hasPu = true;
+    	}
 	}
 	removeObject(cell, type) {
 		if (type === 'food') {
@@ -91,6 +94,9 @@ export default class BoardController {
 		}
 		if (type === 'bomb') {
 			cell.hasBomb = false;
+		}
+		if (type === 'pu') {
+			cell.hasPu = false;
 		}
 	}
 	removeBombs() {
