@@ -38,7 +38,7 @@ export default class BoardController {
 				}
 				if (cellCoords.hasPu) {
 					context.drawImage(
-						Pu,
+						pu,
 						cellCoords.x * this.cellWidth + this.offsetX,
 						cellCoords.y * this.cellheight + this.offsetY,
 					);
