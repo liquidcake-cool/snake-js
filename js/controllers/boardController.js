@@ -37,11 +37,18 @@ export default class BoardController {
 					);
 				}
 				if (cellCoords.hasPu) {
-					context.drawImage(
+					context.fillStyle = "cyan";
+			        context.fillRect(
+			            cellCoords.x * this.cellWidth + this.offsetX,
+			            cellCoords.y * this.cellheight + this.offsetY,
+			            this.cellWidth,
+			            this.cellheight
+			        );
+					/*context.drawImage(
 						pu,
 						cellCoords.x * this.cellWidth + this.offsetX,
 						cellCoords.y * this.cellheight + this.offsetY,
-					);
+					);*/
 				}
 			});
 		});
