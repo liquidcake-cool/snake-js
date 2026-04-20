@@ -68,6 +68,12 @@ export default class SnakeController {
 				this.playBomb = true;
 				this.gameOver = true;  
 			}
+			if (cell.hasPu) {
+				this.playFood = true;
+				this.boardController.removeObject(cell, 'pu');
+				this.boardController.addPu(this);
+				return;
+			}
 			this.snake.snakeCoords.pop();
 		}
 	}
