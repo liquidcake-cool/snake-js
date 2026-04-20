@@ -37,7 +37,7 @@ export default class BoardController {
 					);
 				}
 				if (cellCoords.hasPu) {
-					context.fillStyle = "cyan";
+					context.fillStyle = "red";
 			        context.fillRect(
 			            cellCoords.x * this.cellWidth + this.offsetX,
 			            cellCoords.y * this.cellheight + this.offsetY,
