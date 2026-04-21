@@ -191,7 +191,8 @@ export default class Game {
 			this.delay=300;
 			clearInterval(this.updateInterval);
         	this.start();
-		} else {
+		} 
+		if (this.snakeController.playFood) {
 			this.delay=150;
 			clearInterval(this.updateInterval);
         	this.start();
