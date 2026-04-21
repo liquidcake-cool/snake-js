@@ -187,6 +187,11 @@ export default class Game {
 	}
 	update() {
 		this.snakeController.move();
+		if (this.snakeController.slow){
+			this.delay=300;
+			clearInterval(this.updateInterval);
+        	this.start();
+		}
 		this.context.clearRect(
 			0,
 			0,
