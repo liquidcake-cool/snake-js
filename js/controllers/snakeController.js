@@ -62,6 +62,7 @@ export default class SnakeController {
 				this.playFood = true;
 				this.boardController.removeObject(cell, 'food');
 				this.boardController.addFood(this);
+				this.slow=false;
 				return;
 			}
 			if (cell.hasBomb) {	
