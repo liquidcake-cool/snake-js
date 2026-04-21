@@ -232,9 +232,14 @@ export default class Game {
 		this.updateInterval = setInterval(() => {
 			this.update();
 		}, this.delay);
-		this.bombInterval = setInterval(() => {
+		if (!this.bombInterval) { 
+	        this.bombInterval = setInterval(() => {
+	            this.boardController.addObject(this.snakeController, 'bomb');
+	        }, 5000);
+	    }
+		/*this.bombInterval = setInterval(() => {
 			this.boardController.addObject(this.snakeController, 'bomb');
-		}, 5000);
+		}, 5000);*/
 	}
 
 	gameOver() {
