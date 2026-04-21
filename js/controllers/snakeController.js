@@ -72,6 +72,7 @@ export default class SnakeController {
 				this.playFood = true;
 				this.boardController.removeObject(cell, 'pu');
 				this.boardController.addPu(this);
+				this.delay=300;
 				//return;
 			}
 			this.snake.snakeCoords.pop();
