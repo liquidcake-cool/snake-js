@@ -16,6 +16,7 @@ export default class Game {
 		this.centerX = this.context.canvas.width / 2;
 		this.centerY = this.context.canvas.height / 2;
 		this.score = 0;
+		this.delay=150;
 	}
 	async preload() {
 		await this.preloadImages();
@@ -225,7 +226,7 @@ export default class Game {
 		this.snakeSound.play();
 		this.updateInterval = setInterval(() => {
 			this.update();
-		}, 150);
+		}, this.delay);
 		this.bombInterval = setInterval(() => {
 			this.boardController.addObject(this.snakeController, 'bomb');
 		}, 5000);
@@ -234,6 +235,7 @@ export default class Game {
 	gameOver() {
 		this.snakeSound.pause();
 		this.gameOverSound.play();
+		this.delay=5000;
 		const gif = document.getElementById('explosionGif');
 		// 1. Verberg het canvas en toon de GIF
 	    this.canvas.style.display = 'none';
@@ -248,7 +250,7 @@ export default class Game {
 	    setTimeout(() => {
 	        gif.style.display = 'none';
 	        canvas.style.display = 'block';
-        
+        	
         // Hier kun je eventueel de game resetten of het Game Over scherm tonen
 
     	}, 5000);
