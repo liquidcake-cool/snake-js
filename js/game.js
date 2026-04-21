@@ -191,6 +191,10 @@ export default class Game {
 			this.delay=300;
 			clearInterval(this.updateInterval);
         	this.start();
+		} else {
+			this.delay=150;
+			clearInterval(this.updateInterval);
+        	this.start();
 		}
 		this.context.clearRect(
 			0,
