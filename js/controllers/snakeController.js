@@ -76,7 +76,7 @@ export default class SnakeController {
 				if (this.boardController.punumber==0){
 					this.slow=true;
 				} else if (this.boardController.punumber==1){
-					this.boardController.addFood();
+					this.boardController.addFood(this);
 				} else {
 					this.boardController.removeObject(cell,'bomb');
 				}
