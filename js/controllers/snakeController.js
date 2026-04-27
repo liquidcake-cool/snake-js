@@ -72,7 +72,7 @@ export default class SnakeController {
 			if (cell.hasPu) {
 				this.playFood = true;
 				this.boardController.removeObject(cell, 'pu');
-				this.boardController.addPu(this);
+				
 				console.log(this.boardController.punumber);
 				if (this.boardController.punumber==0){
 					this.slow=true;
@@ -81,6 +81,7 @@ export default class SnakeController {
 				} else {
 					this.boardController.removeObject(cell,'bomb');
 				}
+				this.boardController.addPu(this);
 				//return;
 			}
 			this.snake.snakeCoords.pop();
