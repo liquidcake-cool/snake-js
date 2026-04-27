@@ -37,7 +37,14 @@ export default class BoardController {
 					);
 				}
 				if (cellCoords.hasPu) {
-					context.fillStyle = "red";
+					this.punuber = Math.floor(Math.random() * 3);
+					if (this.punumber==0){
+						context.fillStyle = "red";
+					} else if (this.punumber==1){		
+						context.fillStyle = "green";
+					} else{ 	
+						context.fillStyle = "blue";
+					}
 			        context.fillRect(
 			            cellCoords.x * this.cellWidth + this.offsetX,
 			            cellCoords.y * this.cellheight + this.offsetY,
