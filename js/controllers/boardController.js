@@ -37,7 +37,7 @@ export default class BoardController {
 					);
 				}
 				if (cellCoords.hasPu) {
-					this.punuber = Math.floor(Math.random() * 3);
+					this.punumber = Math.floor(Math.random() * 3);
 					if (this.punumber==0){
 						context.fillStyle = "red";
 					} else if (this.punumber==1){		
