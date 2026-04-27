@@ -73,6 +73,7 @@ export default class SnakeController {
 				this.playFood = true;
 				this.boardController.removeObject(cell, 'pu');
 				this.boardController.addPu(this);
+				console.log(this.boardController.punumber);
 				if (this.boardController.punumber==0){
 					this.slow=true;
 				} else if (this.boardController.punumber==1){
