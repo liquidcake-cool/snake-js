@@ -36,6 +36,7 @@ export default class Game {
 		this.bomb = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/bomb.png');
 		this.explo = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/gif.gif');
 		this.pu= await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/pu.jpg');
+		this.snakeHead2 = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/headpu.png');
 	}
 	async preloadSounds() {
 		this.bombSound = await this.preloadSound('https://liquidcake-cool.github.io/snake-js/sounds/bomb.wav');
@@ -213,10 +214,17 @@ export default class Game {
 			this.pu
 		);
 		this.snakeController.render(
-			this.context,
-			this.boardController,
-			this.snakeBody,
-			this.snakeHead,
+			if (this.snakeController.eatbomb){
+				this.context,
+				this.boardController,
+				this.snakeBody,
+				this.snakeHead2,
+			} else {
+				this.context,
+				this.boardController,
+				this.snakeBody,
+				this.snakeHead,
+			}
 		);
 		this.createScore();
 
