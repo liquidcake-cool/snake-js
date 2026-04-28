@@ -70,7 +70,7 @@ export default class SnakeController {
 				this.gameOver = true;  
 			}
 			if (cell.hasPu) {
-				this.playFood = true;
+				this.playpu = true;
 				this.boardController.removeObject(cell, 'pu');
 				
 				console.log(this.boardController.punumber);
