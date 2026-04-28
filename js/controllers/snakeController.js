@@ -68,7 +68,7 @@ export default class SnakeController {
 			if (cell.hasBomb) {	
 				this.playBomb = true;
 				if (this.eatbomb){
-					this.snakehead = 'https://liquidcake-cool.github.io/snake-js/images/head.png';
+				//	this.snakehead = 'https://liquidcake-cool.github.io/snake-js/images/head.png';
 					this.boardController.removeObject(cell, 'bomb');
 					this.boardController.addBomb(this);
 					this.eatbomb=false;
@@ -87,7 +87,6 @@ export default class SnakeController {
 				} else if (this.boardController.punumber==1){
 					this.boardController.addFood(this);
 				} else {// able to eat bomb
-					this.snakehead = 'https://liquidcake-cool.github.io/snake-js/images/headpu.png';
 					this.eatbomb= true;
 				}
 				this.boardController.addPu(this);
