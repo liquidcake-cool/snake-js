@@ -67,7 +67,14 @@ export default class SnakeController {
 			}
 			if (cell.hasBomb) {	
 				this.playBomb = true;
-				this.gameOver = true;  
+				if (this.eatbomb){
+					this.boardController.removeObject(cell, 'bomb');
+					this.boardController.addBomb(this);
+					this.eatbomb=false;
+				} else{
+					this.gameOver = true; 
+				}
+				
 			}
 			if (cell.hasPu) {
 				this.playpu = true;
@@ -78,8 +85,9 @@ export default class SnakeController {
 					this.slow=true;
 				} else if (this.boardController.punumber==1){
 					this.boardController.addFood(this);
-				} else {
-					this.boardController.removeObject(cell,'bomb');
+				} else {// able to eat bomb
+					this.snakehead = 'https://liquidcake-cool.github.io/snake-js/images/headpu.png';
+					this.eatbomb= true;
 				}
 				this.boardController.addPu(this);
 				//return;
