@@ -25,23 +25,24 @@ export default class Game {
 	}
 	async preloadImages() {
 		this.background = await this.preloadImage(
-			'https://jsdevspace.github.io/snake-js/images/background.png',
+			'https://liquidcake-cool.github.io/snake-js/images/background.png',
 			0,
 			0,
 		);
-		this.cell = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/cell.png');
-		this.food = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/food.png');
-		this.snakeBody = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/body.png');
-		this.snakeHead = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/head.png');
-		this.bomb = await this.preloadImage('https://jsdevspace.github.io/snake-js/images/bomb.png');
+		this.cell = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/cell.png');
+		this.food = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/food.png');
+		this.snakeBody = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/body.png');
+		this.snakeHead = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/head.png');
+		this.bomb = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/bomb.png');
 		this.explo = await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/gif.gif');
 		this.pu= await this.preloadImage('https://liquidcake-cool.github.io/snake-js/images/pu.jpg');
 	}
 	async preloadSounds() {
-		this.bombSound = await this.preloadSound('https://jsdevspace.github.io/snake-js/sounds/bomb.wav');
-		this.foodSound = await this.preloadSound('https://jsdevspace.github.io/snake-js/sounds/food.wav');
-		this.gameOverSound = await this.preloadSound('https://jsdevspace.github.io/snake-js/sounds/game-over.wav');
-		this.snakeSound = await this.preloadSound('https://jsdevspace.github.io/snake-js/sounds/snakecharmer.wav');
+		this.bombSound = await this.preloadSound('https://liquidcake-cool.github.io/snake-js/sounds/bomb.wav');
+		this.foodSound = await this.preloadSound('https://liquidcake-cool.github.io/snake-js/sounds/food.wav');
+		this.gameOverSound = await this.preloadSound('https://liquidcake-cool.github.io/snake-js/sounds/game-over.wav');
+		this.snakeSound = await this.preloadSound('https://liquidcake-cool.github.io/snake-js/sounds/snakecharmer.wav');
+		this.pusound = await this.preloadSound('https://liquidcake-cool.github.io/snake-js/images/pu.mp3');
 		this.snakeSound.loop = true;
 		this.snakeSound.volume = 0.1;
 	}
@@ -270,7 +271,7 @@ export default class Game {
 
     	}, 5000);
 	//	this.snakeBody=this.explo;
-		//https://jsdevspace.github.io/snake-js/images/bomb.png'
+		//https://liquidcake-cool.github.io/snake-js/images/bomb.png'
 		window.location.reload();
 		
 	}
