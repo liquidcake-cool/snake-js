@@ -68,6 +68,7 @@ export default class SnakeController {
 			if (cell.hasBomb) {	
 				this.playBomb = true;
 				if (this.eatbomb){
+					this.snakehead = 'https://liquidcake-cool.github.io/snake-js/images/head.png';
 					this.boardController.removeObject(cell, 'bomb');
 					this.boardController.addBomb(this);
 					this.eatbomb=false;
