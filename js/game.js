@@ -213,19 +213,17 @@ export default class Game {
 			this.bomb,
 			this.pu
 		);
+		
+		// Determine which head image to use based on eatbomb status
+		const headImage = this.snakeController.eatbomb ? this.snakeHead2 : this.snakeHead;
+		
 		this.snakeController.render(
-			if (this.snakeController.eatbomb){
-				this.context,
-				this.boardController,
-				this.snakeBody,
-				this.snakeHead2,
-			} else {
-				this.context,
-				this.boardController,
-				this.snakeBody,
-				this.snakeHead,
-			}
+			this.context,
+			this.boardController,
+			this.snakeBody,
+			headImage
 		);
+		
 		this.createScore();
 
 		if (this.snakeController.playBomb) {
