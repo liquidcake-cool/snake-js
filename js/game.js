@@ -229,6 +229,9 @@ export default class Game {
 			this.foodSound.play();
 			this.snakeController.playFood = false;
 		}
+		if (this.snakeController.playpu){
+			this.pusound.play();
+		}
 		if (this.snakeController.gameOver) {
 			this.gameOver();
 		}
