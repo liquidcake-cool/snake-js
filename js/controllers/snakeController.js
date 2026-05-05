@@ -33,14 +33,14 @@
 			this.snake.snakeCoords.pop();
 		}
 	}
-	/*getNextCell() {
+	getNextCell() {
 		let head = this.snake.snakeCoords[0];
 		return this.boardController.getCell(
 			head.x + this.deltaX,
 			head.y + this.deltaY,
 		);
-	}*/
-	getNextCell() {
+	}
+	/*getNextCell() {
 		let head = this.snake.snakeCoords[0];
 		let nextX = head.x + this.deltaX;
 		let nextY = head.y + this.deltaY;
@@ -62,5 +62,5 @@
 		}
 		
 		return this.boardController.getCell(nextX, nextY);
-	}
+	}*/
 }
