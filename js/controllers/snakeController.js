@@ -95,11 +95,34 @@ export default class SnakeController {
 			this.snake.snakeCoords.pop();
 		}
 	}
-	getNextCell() {
+	/*getNextCell() {
 		let head = this.snake.snakeCoords[0];
 		return this.boardController.getCell(
 			head.x + this.deltaX,
 			head.y + this.deltaY,
 		);
+	}*/
+	getNextCell() {
+		let head = this.snake.snakeCoords[0];
+		let nextX = head.x + this.deltaX;
+		let nextY = head.y + this.deltaY;
+		
+		// Wrapping logica - zijkanten
+		const boardWidth = this.boardController.boardWidth;
+		const boardHeight = this.boardController.boardHeight;
+		
+		if (nextX < 0) {
+			nextX = boardWidth - 1;  // Links uitgang → rechts ingang
+		} else if (nextX >= boardWidth) {
+			nextX = 0;  // Rechts uitgang → links ingang
+		}
+		
+		if (nextY < 0) {
+			nextY = boardHeight - 1;  // Boven uitgang → beneden ingang
+		} else if (nextY >= boardHeight) {
+			nextY = 0;  // Beneden uitgang → boven ingang
+		}
+		
+		return this.boardController.getCell(nextX, nextY);
 	}
 }
