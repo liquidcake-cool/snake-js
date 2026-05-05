@@ -46,8 +46,8 @@
 		let nextY = head.y + this.deltaY;
 		
 		// Wrapping logica - zijkanten
-		const boardWidth = this.boardController.board.boadWidth;
-		const boardHeight = this.boardController.board.boadHeight;
+		const boardWidth = this.boardController.boadWidth;
+		const boardHeight = this.boardController.boadHeight;
 		
 		if (nextX < 0) {
 			nextX = boardWidth - 1;  // Links uitgang → rechts ingang
